@@ -1,123 +1,105 @@
-# PresenceAI - AI-Powered Interview Coach
+#PresenceAI - AI-Powered Interview Coach 🤖#
+An AI-powered web application that serves as a personal interview coach. PresenceAI generates domain-specific questions, records your practice sessions, and provides real-time, data-driven feedback on your verbal and non-verbal communication skills.
 
-A complete full-stack application for AI-powered interview coaching with video recording and analysis capabilities.
+(Recommended: Add a GIF of your application in action here. A tool like Giphy Capture can create this easily.)
 
-## Project Structure
+About The Project
+PresenceAI is designed to help users build confidence and improve their interview performance. Unlike generic practice tools, it leverages a Large Language Model (Google's Gemini) to create relevant questions for any job role, from "Software Engineer" to "HR Manager." After the user records their answers, the application uses computer vision and speech recognition to analyze their performance, providing a detailed feedback report.
 
-```
-PresenceAI/
-├── presence-ai-backend/          # Python FastAPI backend
-│   ├── requirements.txt         # Python dependencies
-│   ├── main.py                  # FastAPI server
-│   └── ai_processor.py         # AI analysis module
-└── presence-ai-frontend/        # React frontend
-    ├── src/
-    │   ├── components/
-    │   │   ├── InterviewScreen.js    # Webcam recording component
-    │   │   └── FeedbackDisplay.js    # Analysis results display
-    │   ├── App.js                     # Main React app
-    │   └── App.css                    # Styling
-    └── package.json
-```
+Tech Stack
+This project is a full-stack application built with a modern tech stack:
 
-## Setup Instructions
+Frontend: React.js
 
-### Backend Setup (Python/FastAPI)
+Backend: Python, FastAPI
 
-1. Navigate to the backend directory:
-   ```bash
-   cd presence-ai-backend
-   ```
+AI / ML:
 
-2. Create a virtual environment (recommended):
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+LLM: Google Gemini Pro
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+Computer Vision: OpenCV
 
-4. Run the FastAPI server:
-   ```bash
-   uvicorn main:app --reload --host 0.0.0.0 --port 8000
-   ```
+Speech Recognition: Google Web Speech API, SpeechRecognition
 
-The backend will be available at `http://localhost:8000`
+Audio Processing: MoviePy
 
-### Frontend Setup (React)
+Features
+🤖 AI-Generated Questions: Get personalized interview questions for any job role.
 
-1. Navigate to the frontend directory:
-   ```bash
-   cd presence-ai-frontend
-   ```
+📹 Webcam Recording: Practice your answers in a realistic interview setting.
 
-2. Install dependencies (if not already done):
-   ```bash
-   npm install
-   ```
+🧠 Real-Time Analysis: Receive instant feedback on key communication metrics:
 
-3. Start the React development server:
-   ```bash
-   npm start
-   ```
+Speaking Pace (Words Per Minute)
 
-The frontend will be available at `http://localhost:3000`
+Filler Word Count ("um," "uh," "like," etc.)
 
-## Features
+Eye Contact (Estimated via face detection)
 
-- **🤖 AI-Generated Questions**: Personalized interview questions based on job role using Google's Gemini LLM
-- **🎯 Domain-Specific Practice**: Tailored questions for any job position (Software Engineer, Data Scientist, etc.)
-- **📹 Webcam Recording**: Record interview sessions directly in the browser
-- **🧠 Real AI Analysis**: Advanced speech-to-text and computer vision analysis including:
-  - **Speech-to-Text**: Automatic transcription of your speech
-  - **Speaking Pace**: Real-time calculation of words per minute
-  - **Filler Word Detection**: Counts "um", "uh", "like", "so", "you know", "i mean"
-  - **Eye Contact Analysis**: Face detection to estimate eye contact percentage
-  - **Transcript Display**: See exactly what you said during the interview
-- **💡 Smart Feedback**: Intelligent recommendations based on your performance
-- **🔄 Complete Interview Flow**: Setup → Practice → Analysis → Restart
-- **🎨 Modern UI**: Beautiful dark theme with responsive design
+Full Speech-to-Text Transcript
 
-## Usage
+💡 Smart Feedback: A comprehensive dashboard to review your performance.
 
-1. **Setup**: Start both the backend and frontend servers
-2. **Get API Key**: Follow the setup instructions in `presence-ai-backend/SETUP_INSTRUCTIONS.md`
-3. **Open App**: Navigate to `http://localhost:3000`
-4. **Enter Job Role**: Type your desired job position (e.g., "Software Engineer")
-5. **Generate Questions**: Click "Start Interview" to get AI-generated questions
-6. **Practice**: Record your answers to the personalized questions
-7. **Get Feedback**: View your AI-generated analysis and improvement tips
-8. **Practice Again**: Use the restart button to try different job roles
+🔄 Unlimited Practice: A seamless "Restart" flow to practice for different roles.
 
-## Development Notes
+🎨 Modern UI: A clean, responsive, and intuitive dark-theme interface.
 
-- **🤖 LLM Integration**: Uses Google's Gemini Pro model for intelligent question generation
-- **🎯 Domain Expertise**: AI generates role-specific questions based on job requirements
-- **🧠 Real AI Analysis**: Speech-to-text (Google Web Speech API) and computer vision (OpenCV)
-- **📹 Audio Processing**: MoviePy for video-to-audio extraction with SpeechRecognition
-- **👁️ Face Detection**: OpenCV's Haar Cascade classifier for eye contact analysis
-- **🛡️ Error Handling**: Graceful fallback to demo data if analysis fails
-- **🔄 State Management**: Complete interview flow with setup, practice, and feedback
-- **🎨 Modern UI**: Responsive design with beautiful cards and hover effects
+Getting Started
+To get a local copy up and running, follow these simple steps.
 
-## Technical Implementation
+Prerequisites
+Python 3.9+
 
-- **Backend**: FastAPI with Google Gemini LLM integration
-- **Question Generation**: AI-powered personalized interview questions
-- **Speech Recognition**: Google Web Speech API for accurate transcription
-- **Computer Vision**: OpenCV for face detection and analysis
-- **Audio Processing**: MoviePy for video-to-audio extraction
-- **Frontend**: React with multi-screen state management
-- **API Integration**: RESTful endpoints for questions and analysis
+Node.js and npm
 
-## Next Steps for Production
+A Google AI API Key
 
-- Add user authentication and session management
-- Implement video storage and retrieval
-- Add sentiment analysis using NLP libraries
-- Improve eye contact detection with more sophisticated algorithms
-- Add more detailed feedback metrics (gesture analysis, voice tone)
-- Deploy to cloud platforms
+Installation & Setup
+Clone the repo
+
+Bash
+
+git clone https://github.com/Aanishnithin07/PresenceAI.git
+cd PresenceAI
+Backend Setup
+
+Bash
+
+cd presence-ai-backend
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+Create a .env file in the presence-ai-backend folder and add your API key:
+
+GOOGLE_API_KEY="YOUR_API_KEY_HERE"
+Frontend Setup (in a new terminal)
+
+Bash
+
+cd presence-ai-frontend
+npm install
+Running the Application
+Start the Backend Server (from presence-ai-backend)
+
+Bash
+
+uvicorn main:app --reload
+Start the Frontend Server (from presence-ai-frontend)
+
+Bash
+
+npm start
+Open http://localhost:3000 in your browser.
+
+Future Roadmap
+🚀 Deployment: Package the application for deployment on cloud platforms.
+
+👤 User Authentication: Add user accounts to save practice history.
+
+📈 Advanced Metrics:
+
+Implement sentiment and voice tone analysis.
+
+Add gesture and posture analysis.
+
+🎥 Video Storage: Allow users to save and review past practice sessions.
