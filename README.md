@@ -1,4 +1,5 @@
-#PresenceAI - AI-Powered Interview Coach 🤖#
+**#PresenceAI - AI-Powered Interview Coach 🤖#**
+
 An AI-powered web application that serves as a personal interview coach. PresenceAI generates domain-specific questions, records your practice sessions, and provides real-time, data-driven feedback on your verbal and non-verbal communication skills.
 
 (Recommended: Add a GIF of your application in action here. A tool like Giphy Capture can create this easily.)
